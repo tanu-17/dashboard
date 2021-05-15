@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+body > * {
+  -webkit-text-stroke: 0.025em rgb(0, 0, 0, 0.2);
+  font-family: "Poppins";
+}
+.container {
+  display: grid;
+  grid-template-columns: 15% 1fr;
+  grid-template-rows: 7vh 43vh 50vh;
+  grid-template-areas:
+    "side-nav header"
+    "side-nav main"
+    "side-nav main";
+  height: 100vh;
+  background: rgba(169, 169, 169, 0.4);
+}
+.border-test{
+  border: 1px solid black ;
+}
+
+.header {
+  grid-area: header;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 2% 0 2%;
+  
+}
+
+.header__menu__toggle {
+  margin-right:auto;
+}
+.header__item{
+  margin-left: 1%;
+  
+  /* border-radius: 50%;
+  padding: 1%;
+  background: coral;
+  width: 1%;
+  height: 100%;
+  display: flex;
+  justify-content: center; */
+  
+}
+.header__item__icon {height:100%;
+  width:100%;
+  padding:0 1% 0 1%;
+  
+  
+}
+
+.side-nav {
+  grid-area: side-nav;
+  background-color: rgb(43, 33, 82);
+  overflow: hidden;
+}
+
+.main {
+  grid-area: main;
+}
+.main > * {
+  margin: 0 2% 0 2%;
+}
+.dashboard-section {
+  display: grid;
+  grid-template-rows: 10vh 8vh 22vh;
+  grid-template-areas:
+    "dashboard-title"
+    "sub-menu"
+    "analysis-counter";
+}
+.dashboard-section__title,
+.overview-section__title {
+  background: cornsilk;
+  display: flex;
+  align-content: center;
+  grid-area: dashboard-title;
+  margin: 1% 0 1% 0;
+  padding: 2%;
+}
+
+.dashboard-section__title__purchase,
+.overview-section__btn {
+  margin-left: 2%;
+  /* float: right; */
+  border: 1px solid black;
+  padding: 2% 1% 2% 1%;
+}
+
+.dashboard-section__title__text,
+.overview-section__title__text {
+  float: left;
+}
+a {
+  color: grey;
+  text-decoration: none;
+}
+a:active {
+  color: dodgerblue;
+}
+
+.title-text > * {
+  margin: 0;
+}
+
+.overview-section {
+  display: grid;
+  grid-template-rows: 15vh 35vh;
+  grid-template-areas: "overview-section__title" "overview-section__statistics";
+  border: 1px solid black;
+}
+
+.overview-section__title {
+  grid-area: overview-section__title;
+}
+.sidenav ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.side-nav__item {
+  width: auto;
+  margin: 2%;
+  padding: 2%;
+  color: white;
+  font-size: 1em;
+}
+.side-nav__head {
+  background-color: rgb(69, 53, 136);
+  width: 97%;
+  padding: 2%;
+  color: white;
+  font-size: 2rem;
+}
+
+.overview-section__statistics {
+  grid-area: overview-section__statistics;
+  display: flex;
+  flex-flow: row wrap;
+}
+.overview-section__graph {
+  width: 68%;
+  height: 100%;
+  margin-right: 2%;
+}
+.overview-section__portfolio {
+  width: 30%;
+  height: 100%;
+}
+
+.analysis-counter {
+  display: flex;
+  flex-flow: row wrap;
+}
+.analysis-counter {
+  background: rgb(31, 92, 224, 0.7);
+  grid-area: analysis-counter;
+}
+.analysis-counter__item, h2,
+h5 {
+  margin: 2% 0 0 0;
+}
+
+.analysis-counter__item{
+  width: 20%;
+  align-items: center;
+  padding-left: 5%;
+  color: white;
+  padding-top: 3%;
+}
+
+.sub-menu {
+  background: white;
+  grid-area: sub-menu;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+.sub-menu ul li {
+  margin-right: 2%;
+}
+li {
+  list-style: none;
+}
+ul {
+  padding: 0 2% 0 2%;
+}
+.fix {
+  content: "";
+  clear: both;
+  display: block;
+}
+.left-sub-menu {
+  float: left;
+  color: darkgrey;
+}
+
+.right-sub-menu {
+  float: right;
+  color: darkgrey;
+}
+
+
+
+.footer {
+  grid-area: footer;
+  background-color: #648ca6;
+}
+.img {
+  width: 100%;
+  max-height: 100%;
+}
+.btn {
+  padding: 10%;
+}
+@media screen and (max-width: 480px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10vh 40vh 50vh;
+    grid-template-areas: "header" "main" "main";
+    height: 100vh;
+    width: 100%;
+  }
+  .header {
+    width: 100vw;
+  }
+  .side-nav {
+    display: none;
+  }
+  .analysis-counter__item {
+    width: 40%;
+  }
+  .portfolio,
+  .graph,
+  .main {
+    width: 100%;
+  }
+  .fix {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
